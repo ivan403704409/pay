@@ -1,5 +1,5 @@
 
-class Pay {
+export default class Pay {
     /**
      * [constructor description]
      * @param  {[type]} options.total [总价]
@@ -16,7 +16,7 @@ class Pay {
         this.monthRate = this.rate / 12
 
         // 每月本金
-        this.monthBenJin = this.total / this.month
+        this.monthBenJin = this.parse (this.total / this.month )
     }
 
     // 保留两位小数
@@ -100,18 +100,18 @@ class Pay {
 
 }
 
-var oPay = new Pay({
-    total: 730000,
-    month: 360,
-    rate: 5.88
-})
+// var oPay = new Pay({
+//     total: 730000,
+//     month: 360,
+//     rate: 5.88
+// })
 
-oPay.getMonthInterest(1)
-oPay.getMutipleMonthInterest(12)
-oPay.getCurPay_interest(360)
+// oPay.getMonthInterest(1)
+// oPay.getMutipleMonthInterest(12)
+// oPay.getCurPay_interest(360)
 
-var tmp = []
-for(var i=0; i<=360; i++){
-    tmp.push( oPay.getCurPay_interest(i).interestRate )
-}
-JSON.stringify(tmp)
+// var tmp = []
+// for(var i=0; i<=360; i++){
+//     tmp.push( oPay.getCurPay_interest(i).interestRate )
+// }
+// JSON.stringify(tmp)
